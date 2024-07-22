@@ -41,11 +41,9 @@ public class CV {
         frame.setTitle("Resume Builder");
         frame.setSize(600, 800);
 
-        // Initialize the cvPanel
         cvPanel = new JPanel(new GridBagLayout());
         frame.setContentPane(cvPanel);
 
-        // Initialize and add components to the cvPanel
         initializeComponents();
 
         frame.pack();
@@ -54,7 +52,7 @@ public class CV {
     }
 
     private void initializeComponents() {
-        // Initialize the text fields
+        
         name = new JTextField(20);
         address = new JTextField(20);
         contact = new JTextField(20);
@@ -68,18 +66,14 @@ public class CV {
         location = new JTextField(20);
         college = new JTextField(20);
 
-        // Initialize other components
         img = new JLabel();
         selectImageButton = new JButton("Select Image");
         generateResumeButton = new JButton("Generate Resume");
 
-        // Initialize the combo box for work experience
         work = new JComboBox<>(new String[]{"< 1 year", "1-2 years", "2-5 years", "5+ years"});
 
-        // Initialize the combo box for template selection
         templateSelector = new JComboBox<>(new String[]{"Template 1", "Template 2", "Template 3", "Template 4"});
 
-        // Create and set layout for cvPanel using GridBagConstraints
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 5, 5, 5);
@@ -135,7 +129,6 @@ public class CV {
         gbc.gridy = 15;
         cvPanel.add(generateResumeButton, gbc);
 
-        // Add action listeners
         addListeners();
     }
 
